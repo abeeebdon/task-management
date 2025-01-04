@@ -1,5 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 import * as yup from 'yup'
 interface FormData {
   name: string
@@ -38,21 +39,31 @@ const Signup = () => {
   }
 
   return (
-    <section className="bg-background min-h-screen w-full ">
-      <article className="max-w-md mx-auto">
-        <div className="text-lg p-4">signup</div>
+    <section className="bg-bg1 min-h-screen w-full flex justify-between gap-10 ">
+      <article className="basis-[40%] bg-background rounded-r-[60px] flex items-center justify-center">
+        <div className="text-white">
+          <h2>Abeebdon</h2>
+        </div>
+      </article>
+      <article className="basis-[55%] pt-10 ">
+        <div className="flex justify-around gap-10  max-w-lg mx-auto mt-10 [&>*]:rounded-lg [&>*]:border-2 [&>*]:border-purple-500 [&>*]:p-4">
+          <button>Signup with Google</button>
+          <button>Signup with Facebook</button>
+        </div>
+        <p className="text-center my-10">- OR -</p>
 
         {/* name, email, password, confirmPassword, signupButton */}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-4 max-w-md mx-auto"
+          className="space-y-4 max-w-lg mx-auto"
         >
           <div>
             <input
               type="text"
               id="name"
+              placeholder="Name"
               {...register('name')}
-              className={`border p-2 w-full rounded ${
+              className={`border-b bg-transparent p-2 text-dpurple w-full rounded ${
                 errors.name ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -67,7 +78,7 @@ const Signup = () => {
               type="email"
               id="email"
               {...register('email')}
-              className={`border p-2 w-full rounded ${
+              className={`border-b bg-transparent p-2 text-dpurple w-full rounded ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -82,7 +93,7 @@ const Signup = () => {
               type="password"
               id="password"
               {...register('password')}
-              className={`border p-2 w-full rounded ${
+              className={`border-b bg-transparent p-2 text-dpurple w-full rounded ${
                 errors.password ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -97,7 +108,7 @@ const Signup = () => {
               type="password"
               id="confirmPassword"
               {...register('confirmPassword')}
-              className={`border p-2 w-full rounded ${
+              className={`border-b bg-transparent p-2 text-dpurple w-full rounded ${
                 errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -109,12 +120,21 @@ const Signup = () => {
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-          >
-            Register
-          </button>
+
+          <div className="pt-5">
+            <button
+              type="submit"
+              className="bg-purple-900  text-white w-full px-4 py-3 rounded hover:bg-blue-600"
+            >
+              Create Account
+            </button>
+          </div>
+          <div className="flex justify-center gap-1">
+            <p>Already have an account?</p>
+            <Link to="/login" className="text-dpurple">
+              Log in
+            </Link>
+          </div>
         </form>
       </article>
     </section>
