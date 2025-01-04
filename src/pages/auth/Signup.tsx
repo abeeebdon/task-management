@@ -39,14 +39,9 @@ const Signup = () => {
   }
 
   return (
-    <section className="bg-bg1 min-h-screen w-full flex justify-between gap-10 ">
-      <article className="basis-[40%] bg-background rounded-r-[60px] flex items-center justify-center">
-        <div className="text-white">
-          <h2>Abeebdon</h2>
-        </div>
-      </article>
-      <article className="basis-[55%] pt-10 ">
-        <div className="flex justify-around gap-10  max-w-lg mx-auto mt-10 [&>*]:rounded-lg [&>*]:border-2 [&>*]:border-purple-500 [&>*]:p-4">
+    <article className="basis-[55%] pt-10 flex justify-center items-center px-2">
+      <article>
+        <div className="flex justify-around gap-10 max-w-lg mx-auto mt-10 [&>*]:rounded-lg [&>*]:border-2 [&>*]:border-purple-500 [&>*]:p-4 [&>*]:text-sm">
           <button>Signup with Google</button>
           <button>Signup with Facebook</button>
         </div>
@@ -55,7 +50,7 @@ const Signup = () => {
         {/* name, email, password, confirmPassword, signupButton */}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-4 max-w-lg mx-auto"
+          className="space-y-6 max-w-lg mx-auto "
         >
           <div>
             <input
@@ -63,7 +58,7 @@ const Signup = () => {
               id="name"
               placeholder="Name"
               {...register('name')}
-              className={`border-b bg-transparent p-2 text-dpurple w-full rounded ${
+              className={`border-b bg-transparent p-2 outline-none text-dpurple w-full rounded ${
                 errors.name ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -77,8 +72,9 @@ const Signup = () => {
             <input
               type="email"
               id="email"
+              placeholder="Email"
               {...register('email')}
-              className={`border-b bg-transparent p-2 text-dpurple w-full rounded ${
+              className={`border-b bg-transparent outline-none p-2 text-dpurple w-full rounded ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -93,7 +89,8 @@ const Signup = () => {
               type="password"
               id="password"
               {...register('password')}
-              className={`border-b bg-transparent p-2 text-dpurple w-full rounded ${
+              placeholder="Password"
+              className={`border-b bg-transparent outline-none p-2 text-dpurple w-full rounded ${
                 errors.password ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -107,8 +104,9 @@ const Signup = () => {
             <input
               type="password"
               id="confirmPassword"
+              placeholder="Confirm Password"
               {...register('confirmPassword')}
-              className={`border-b bg-transparent p-2 text-dpurple w-full rounded ${
+              className={`border-b bg-transparent outline-none p-2 text-dpurple w-full rounded ${
                 errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -124,20 +122,20 @@ const Signup = () => {
           <div className="pt-5">
             <button
               type="submit"
-              className="bg-purple-900  text-white w-full px-4 py-3 rounded hover:bg-blue-600"
+              className="bg-purple-900  text-white w-full px-4 py-3 rounded hover:bg-blue-950"
             >
               Create Account
             </button>
           </div>
           <div className="flex justify-center gap-1">
             <p>Already have an account?</p>
-            <Link to="/login" className="text-dpurple">
+            <Link to="/auth/login" className="text-dpurple">
               Log in
             </Link>
           </div>
         </form>
       </article>
-    </section>
+    </article>
   )
 }
 
