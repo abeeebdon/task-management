@@ -6,6 +6,8 @@ import AuthLayout from './components/AuthLayout'
 import Projects from './pages/screens/Projects'
 import DashboardLayout from './components/DashboardLayout'
 import Dashboard from './pages/screens/Dashboard'
+import Tasks from './pages/screens/Tasks'
+import Notifications from './pages/screens/Notifications'
 
 function App() {
   return (
@@ -13,8 +15,10 @@ function App() {
       <Routes>
         <Route path="/landing" element={<Homepage />} />
 
-        <Route path="/dashboard" element={<DashboardLayout />}>
+        <Route path="/" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path="tasks" element={<Tasks />} />
+          <Route path="notifications" element={<Notifications />} />
 
           <Route path="projects" element={<Projects />} />
         </Route>

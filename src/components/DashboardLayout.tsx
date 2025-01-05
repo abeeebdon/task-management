@@ -17,28 +17,28 @@ const DashboardLayout = () => {
       icon: <MdOutlineDashboard />,
 
       paragraph: 'Dashboard',
-      path: '/dashboard',
+      path: '/',
     },
     {
       icon: <SiTicktick />,
 
       paragraph: 'My Tasks',
-      path: '/dashboard/tasks',
+      path: '/tasks',
     },
     {
       icon: <HiOutlineBellAlert />,
       paragraph: 'Notifications',
-      path: '/dashboard/notifications',
+      path: '/notifications',
     },
     {
       icon: <FaSection />,
       paragraph: 'Settings',
-      path: '/dashboard/settings',
+      path: '/settings',
     },
   ]
   return (
     <main className="bg-gray-200 min-h-screen   ">
-      <section className="max-w-[1024px] flex mx-auto gap-6 ">
+      <section className="max-w-[1024px] flex mx-auto gap-6 bg-transparent ">
         <aside className=" basis-1/4 bg-white min-h-screen rounded-2xl px-2 py-8 flex flex-col justify-between">
           <section>
             <div className="f">
@@ -88,7 +88,7 @@ const DashboardLayout = () => {
         </aside>
         <div className="w-full h-full ">
           <header className="bg-white p-2 flex items-center justify-between rounded-2xl">
-            <div className="flex items-center border-none outline-none p-4 py-3 rounded-2xl bg-gray-100 w-full max-w-[150px] md:max-w-xs">
+            <div className="flex items-center border-none outline-none p-4 py-2 rounded-2xl bg-gray-100 w-full max-w-[150px] md:max-w-xs">
               <input
                 type="text"
                 placeholder="Enter text to search"
@@ -104,7 +104,7 @@ const DashboardLayout = () => {
               <FaEnvelope color="#2e1c64" size={30} />
             </div>
           </header>
-          <div className="mt-4 bg-white rounded-l-3xl p-4 h-full">
+          <div className="mt-4 rounded-l-3xl p-4 h-full">
             <Outlet />
           </div>
         </div>
