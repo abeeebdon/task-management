@@ -19,7 +19,7 @@ interface TaskData {
 type Value = ValuePiece | [ValuePiece, ValuePiece]
 const Dashboard = () => {
   const [value, setValue] = useState<Value>(new Date())
-  const [categories, setCategories] = useState<Categories[]>([
+  const categories: Categories[] = [
     {
       name: 'Friend',
       icon: <FaUser />,
@@ -28,7 +28,7 @@ const Dashboard = () => {
       name: 'Friend',
       icon: <FaUser />,
     },
-  ])
+  ]
   const [taskData, setTaskData] = useState<TaskData[]>([
     {
       id: 1,
