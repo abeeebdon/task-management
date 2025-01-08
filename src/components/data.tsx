@@ -5,6 +5,11 @@ export interface TaskType {
   priority: string
 }
 
+export interface NotificationType {
+  name: string
+  description: string
+}
+
 export const tasks: TaskType[] = [
   {
     name: 'Task 1',
@@ -82,3 +87,14 @@ export const tasks: TaskType[] = [
 
 // priority can be high low or medium
 // status can be completed , in progress or not started
+
+export const notifications: NotificationType[] = [
+  {
+    name: 'Conversion',
+    description: 'Dollar to naira',
+  },
+  {
+    name: 'Company add a new task',
+    description: 'Conversion',
+  },
+]

@@ -43,15 +43,13 @@ const DashboardLayout = () => {
     <>
       <main className="bg-gray-200 min-h-screen   ">
         <section className="max-w-[1024px] flex mx-auto gap-6 bg-transparent ">
-          <aside className=" basis-1/4 bg-white min-h-screen rounded-2xl px-2 py-8 flex flex-col justify-between">
+          <aside className=" basis-1/4 bg-white min-h-screen rounded-2xl px-2 pt-4 pb-8 flex flex-col justify-between">
             <section>
-              <div className="f">
-                {/* to be replaced with img  */}
-                <p>
-                  Abeeb<span className="text-red-500">don</span>
-                </p>
-              </div>
-              <article className="mt-6">
+              {/* to be replaced with img  */}
+              <h2 className="text-3xl font-bold text-center">
+                Abeeb<span className="text-red-500">don</span>
+              </h2>
+              <article className="mt-10">
                 {asideArray.map((asides, i) => {
                   if (i + 1 == asideArray.length) return
                   return (
