@@ -116,7 +116,7 @@ const DashboardLayout = () => {
         </section>
       </main>
 
-      {addTask && <AddTask />}
+      {addTask && <AddTask setAddTask={setAddTask} />}
     </>
   )
 }

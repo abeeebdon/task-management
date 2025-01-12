@@ -5,6 +5,10 @@ export interface TaskType {
   description: string
   priority: string
   notification?: boolean
+  assignee?: string
+  deadline?: string
+  attachments?: string
+  links?: string
 }
 
 export interface NotificationType {
@@ -22,6 +26,10 @@ export const tasks: TaskType[] = [
     status: 'completed',
     priority: 'high',
     notification: true,
+    assignee: 'John Doe',
+    deadline: '2025-01-07',
+    attachments: 'No attachments',
+    links: 'No links',
   },
   {
     name: 'Task 2',
@@ -32,6 +40,7 @@ export const tasks: TaskType[] = [
     status: 'in progress',
     priority: 'low',
     notification: true,
+    assignee: 'John Doe',
   },
   {
     name: 'Task 3',
@@ -42,6 +51,7 @@ export const tasks: TaskType[] = [
     status: 'not started',
     priority: 'high',
     notification: false,
+    assignee: 'John Doe',
   },
   {
     name: 'Task 4',
